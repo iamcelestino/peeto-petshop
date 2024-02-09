@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title><%=  pageTitle %></title>
+</head>
+    <header>
+        <div class="container row">
+            
+            <div class="logo">
+                <h2>Peeto</h2>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li class="nav__list"><a href="">home</a></li>
+                    <li class="nav__list"><a href="">shop</a></li>
+                    <li class="nav__list"><a href="">About us</a></li>
+                    <li class="nav__list"><a href="">Contact us</a></li>
+                </ul>
+            </nav>
+            <div class="icons">
+                <ion-icon name="bag-handle-outline"></ion-icon>
+                <ion-icon name="heart-outline"></ion-icon>
+                <ion-icon name="person-circle-outline"></ion-icon>
+            </div>
+        </div>
+    </header>
+    <body>
+        <h1>This the admin Page</h1>
+        <form action="/admin/addproduct" method="POST">
+            <input type="" name="title" id="title">
+            <button type="submit">Add Product</button>
+        </form>
+    </body>
+</html>
