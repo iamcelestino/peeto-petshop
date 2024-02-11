@@ -4,13 +4,10 @@ const path = require('path');
 
 const router = express.Router();
 
-const adminData = require('./admin')
-
 router.get('/', (req, res) => {
-   console.log(adminData.products);
+   console.log();
    res.render('index', {pageTitle: 'home'});
 });
-
 
 module.exports = router;
 

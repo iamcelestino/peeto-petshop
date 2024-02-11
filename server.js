@@ -3,6 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 const app = express();
+const errorControllers = require('./controllers/404');
 
 app.set('view engine',  'ejs');
 app.set('views', 'views');
@@ -12,11 +13,8 @@ const userRouter = require('./routes/shop');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use('/admin', adminRouter.routes);
+app.use('/admin', adminRouter);
 app.use(userRouter);
-app.use((req, res, next) => {
-    res.status(404).render('404', {pageTitle: '404'});
-});
-
+app.use(errorControllers.pageNotFoundError);
 
 app.listen(3000);
