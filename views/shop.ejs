@@ -16,25 +16,26 @@
             <div class="container grid">
 
                 <div class="dog">
-                    <img src="img/hero-image.png" alt="">
+                    <img src="" alt="">
                 </div>
                 <div class="">
-                    <img class="dog2"   src="img/dog.png" alt="">
-                    <img src="img/puppy.png" alt="">
+                    <img class="dog2"   src="" alt="">
+                    <img src="" alt="">
                 </div>
                 <div class="dog">
-                    <img src="img/herodog2.png">
+                    <img src="">
                 </div>
                
             </div>
         </section>
         <section class="products">
             <div class="container">
-        
+                <% if (prods.length > 0) { %>
                     <div class="grid">
+                        <% for (product of prods) { %>
                             <article class="card product-item">
                                 <header class="card__header">
-                                    <h1 class="product__title"></h1>
+                                    <h1 class="product__title"><%= product.title %></h1>
                                 </header>
                                 <div class="card__image">
                                     <img src="/img/product-2_0.jpg" alt="product">
@@ -47,12 +48,13 @@
                                     <button class="btn">Add to Cart</button>
                                 </div>
                             </article>
+                        <% } %>
                     </div>
+                    <% } else { %>
+                        <h1>There's no product yet</h1>
+                    <% } %>
             </div>
-
-
         </section>
-
         <section class="more">
             <div class="container">
                 <div class="text">
