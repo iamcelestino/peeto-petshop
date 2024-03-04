@@ -1,4 +1,13 @@
+const Product = require('../model/product');
 
+exports.getProduct = (req, res, next) => {
+    Product.fetchAll(products => {
+        res.render('shop/shop', {
+            pageTitle: 'home', 
+            prods: products
+        });
+    });
+}
 
 exports.aboutPage = (req, res, next) => {
     res.render('shop/about', {
@@ -6,6 +15,7 @@ exports.aboutPage = (req, res, next) => {
         path: '/about'
     });
 }
+
 
 exports.contactPage = (req, res, next) => {
     res.render('shop/contact', {
